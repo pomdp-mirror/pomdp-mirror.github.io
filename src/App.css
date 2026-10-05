@@ -29,17 +29,17 @@
   max-width: 980px;
 }
 
-.publication-authors a {
+.author-name {
   color: hsl(121, 100%, 36%);
-  text-decoration: none;
-}
-
-.publication-authors a:hover {
-  text-decoration: underline;
 }
 
 .author-block {
   display: inline-block;
+  margin-right: 0.3em;
+}
+
+.author-block:last-child {
+  margin-right: 0;
 }
 
 sup {
@@ -99,7 +99,7 @@ sup {
   color: #fff;
 }
 
-.button.is-dark:hover {
+.button.is-dark:not(:disabled):hover {
   background: #2f2f2f;
   box-shadow: 0 8px 20px rgba(10, 10, 10, 0.18);
   transform: translateY(-1px);
@@ -107,6 +107,10 @@ sup {
 
 .button.is-rounded {
   border-radius: 999px;
+}
+
+.button:disabled {
+  cursor: default;
 }
 
 .button .icon {

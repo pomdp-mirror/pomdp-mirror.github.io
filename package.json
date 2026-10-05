@@ -4,11 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite --mode public",
+    "dev:review": "vite --mode review",
+    "build": "node scripts/build-site.mjs",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist -b gh-pages"
+    "preview": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "deploy": "node scripts/deploy-site.mjs",
+    "deploy:review": "node scripts/deploy-site.mjs review",
+    "deploy:public": "node scripts/deploy-site.mjs public"
   },
   "dependencies": {
     "react": "^19.2.6",

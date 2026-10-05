@@ -1,4 +1,5 @@
 import { useEffect, useId, useState } from 'react'
+import publication from '@publication'
 import './App.css'
 
 const teaserFrameCount = 24
@@ -51,18 +52,11 @@ const realModalityTasks = buildTeaserTasks(
   '_agentview_height_map_with_segmentation',
 )
 
-const authors = [
-  { name: 'First Author', affiliation: '1', href: '#' },
-  { name: 'Second Author', affiliation: '1 2', href: '#' },
-  { name: 'Third Author', affiliation: '2', href: '#' },
-  { name: 'Senior Author', affiliation: '1', href: '#' },
-]
-
 const links = [
-  { label: 'arXiv', href: '#', iconClass: 'ai ai-arxiv' },
-  { label: 'PDF', href: '#', iconClass: 'fas fa-file-pdf' },
-  { label: 'Code', href: '#', iconClass: 'fab fa-github' },
-  { label: 'Data', href: '#', iconClass: 'fas fa-database' },
+  { label: 'arXiv', href: '', iconClass: 'ai ai-arxiv' },
+  { label: 'PDF', href: '', iconClass: 'fas fa-file-pdf' },
+  { label: 'Code', href: '', iconClass: 'fab fa-github' },
+  { label: 'Data', href: '', iconClass: 'fas fa-database' },
 ]
 
 function TeaserBlock({ tasks, observationVariant = 'square', caption }) {
@@ -246,39 +240,47 @@ function App() {
           </h1>
 
           <div className="publication-authors">
-            {authors.map((author, index) => (
+            {publication.authors.map((author, index) => (
               <span className="author-block" key={author.name}>
-                <a href={author.href}>{author.name}</a>
-                <sup>{author.affiliation}</sup>
-                {index < authors.length - 1 ? ', ' : ''}
+                <span className="author-name">{author.name}</span>
+                {author.affiliation ? <sup>{author.affiliation}</sup> : null}
+                {index < publication.authors.length - 1 ? ', ' : ''}
               </span>
             ))}
           </div>
 
-          <div className="publication-affiliations">
-            <span>
-              <sup>1</sup>University or Lab
-            </span>
-            <span>
-              <sup>2</sup>Research Institute
-            </span>
-            <span>
-              <sup>*</sup>Equal Contribution
-            </span>
-          </div>
+          {publication.affiliations.length > 0 ? (
+            <div className="publication-affiliations">
+              {publication.affiliations.map((affiliation) => (
+                <span key={affiliation.id}>
+                  <sup>{affiliation.id}</sup>{affiliation.name}
+                </span>
+              ))}
+            </div>
+          ) : null}
 
-          <p className="corresponding-authors">Corresponding authors: author@example.edu, collaborator@example.edu</p>
-          <p className="venue">Conference or Journal 2026</p>
+          {publication.venue ? <p className="venue">{publication.venue}</p> : null}
 
           <div className="publication-links" aria-label="Paper resources">
-            {links.map((link) => (
-              <a className="button is-dark is-rounded" href={link.href} key={link.label}>
-                <span className="icon">
-                  <i className={link.iconClass}></i>
-                </span>
-                <span>{link.label}</span>
-              </a>
-            ))}
+            {links.map((link) => {
+              const content = (
+                <>
+                  <span className="icon">
+                    <i className={link.iconClass}></i>
+                  </span>
+                  <span>{link.label}</span>
+                </>
+              )
+              return link.href ? (
+                <a className="button is-dark is-rounded" href={link.href} key={link.label}>
+                  {content}
+                </a>
+              ) : (
+                <button className="button is-dark is-rounded" type="button" disabled key={link.label}>
+                  {content}
+                </button>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -528,12 +530,7 @@ function App() {
         <div className="container is-max-desktop">
           <h2 className="title">BibTeX</h2>
           <pre className="citation">
-            <code>{`@inproceedings{paper2026template,
-  title     = {Paper Title Goes Here},
-  author    = {First Author and Second Author and Third Author},
-  booktitle = {Conference Name},
-  year      = {2026}
-}`}</code>
+            <code>{publication.citation}</code>
           </pre>
         </div>
       </section>
