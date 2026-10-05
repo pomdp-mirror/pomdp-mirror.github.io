@@ -310,6 +310,20 @@ function App() {
         </div>
       </section>
 
+      <section className="section overview-video-section">
+        <div className="container is-max-desktop">
+          <h2 className="title">Video</h2>
+          <video
+            className="overview-video"
+            src={`${videoBase}/overview_video.mp4`}
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="MIRROR overview video"
+          />
+        </div>
+      </section>
+
       <section className="section">
         <div className="container is-max-widescreen">
           <h2 className="title">Method Overview</h2>
@@ -484,10 +498,11 @@ function App() {
 
       <section className="section sim2real-section">
         <div className="container is-max-widescreen">
-          <h2 className="title">Sim2Real</h2>
+          <h2 className="title">Real-Robot Deployment</h2>
           <p className="lead">
-            Real-robot rollouts on a Kinova GEN3 arm. The MIRROR-derived symmetry framework, retrained on a
-            height-map modality, transfers to physical hardware across four tabletop tasks.
+            Real-robot rollouts on a Kinova GEN3 arm. MIRROR is retrained in simulation under a height-map +
+            segmentation-mask modality, and the resulting <strong>EBC-MIRROR</strong> policy — an equivariant BC
+            policy built on the discovered symmetry — is deployed on the real arm across four tabletop tasks.
           </p>
           <div className="sim2real-grid">
             {sim2realVideos.map((video) => (

@@ -119,6 +119,25 @@ sup {
   width: 1.5em;
 }
 
+.overview-video-section {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.overview-video {
+  background: #000;
+  border-radius: 14px;
+  box-shadow:
+    0 0 0 1px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(15, 23, 42, 0.08),
+    0 12px 28px -8px rgba(15, 23, 42, 0.18);
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 960px;
+  width: 100%;
+}
+
 .teaser-section {
   padding-top: 22px;
 }
