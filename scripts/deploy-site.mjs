@@ -33,7 +33,7 @@ const options = {
   repo: 'https://github.com/pomdp-mirror/pomdp-mirror.github.io.git',
   branch: 'gh-pages',
   dotfiles: true,
-  silent: true,
+  silent: false,
   message: `Publish MIRROR ${requested === 'all' ? 'public and anonymous review pages' : `${requested} page`}`,
 }
 if (requested !== 'all') {
@@ -43,7 +43,12 @@ if (requested !== 'all') {
 }
 
 try {
-  await ghpages.publish('dist', options)
+  await new Promise((resolve, reject) => {
+    ghpages.publish('dist', options, (error) => {
+      if (error) reject(error)
+      else resolve()
+    })
+  })
   for (const version of versions) console.log(`Published https://pomdp-mirror.github.io/${version}/`)
 } catch (error) {
   let message = error.message
