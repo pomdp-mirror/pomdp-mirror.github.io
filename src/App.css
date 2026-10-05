@@ -31,6 +31,12 @@
 
 .author-name {
   color: hsl(121, 100%, 36%);
+  text-decoration: none;
+}
+
+a.author-name:hover,
+a.author-name:focus-visible {
+  text-decoration: underline;
 }
 
 .author-block {

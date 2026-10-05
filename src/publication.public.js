@@ -1,10 +1,10 @@
 export default {
   authors: [
-    { name: 'Shiqi Liu', affiliation: '1' },
-    { name: 'Yihang Yao', affiliation: '1' },
-    { name: 'Peide Huang', affiliation: '1' },
-    { name: 'Mengdi Xu', affiliation: '2' },
-    { name: 'Ding Zhao', affiliation: '1' },
+    { name: 'Shiqi Liu', affiliation: '1', href: 'https://shiqiliu-67.github.io/' },
+    { name: 'Yihang Yao', affiliation: '1', href: 'https://yihangyao.github.io/' },
+    { name: 'Peide Huang', affiliation: '1', href: 'https://peidehuang.github.io/' },
+    { name: 'Mengdi Xu', affiliation: '2', href: 'https://www.mengdixu.me/' },
+    { name: 'Ding Zhao', affiliation: '1', href: 'https://www.meche.engineering.cmu.edu/directory/bios/zhao-ding.html' },
   ],
   affiliations: [
     { id: '1', name: 'Carnegie Mellon University' },

@@ -242,7 +242,11 @@ function App() {
           <div className="publication-authors">
             {publication.authors.map((author, index) => (
               <span className="author-block" key={author.name}>
-                <span className="author-name">{author.name}</span>
+                {author.href ? (
+                  <a className="author-name" href={author.href}>{author.name}</a>
+                ) : (
+                  <span className="author-name">{author.name}</span>
+                )}
                 {author.affiliation ? <sup>{author.affiliation}</sup> : null}
                 {index < publication.authors.length - 1 ? ', ' : ''}
               </span>
