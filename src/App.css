@@ -94,10 +94,7 @@ sup {
   min-width: 96px;
   padding: calc(0.5em - 1px) 1em;
   text-decoration: none;
-  transition:
-    background 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease;
+  transition: background 160ms ease;
 }
 
 .button.is-dark {
@@ -107,8 +104,6 @@ sup {
 
 .button.is-dark:not(:disabled):hover {
   background: #2f2f2f;
-  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.18);
-  transform: translateY(-1px);
 }
 
 .button.is-rounded {
@@ -137,10 +132,6 @@ sup {
 .overview-video {
   background: #000;
   border-radius: 14px;
-  box-shadow:
-    0 0 0 1px rgba(15, 23, 42, 0.06),
-    0 2px 8px rgba(15, 23, 42, 0.08),
-    0 12px 28px -8px rgba(15, 23, 42, 0.18);
   display: block;
   height: auto;
   margin: 0 auto;
@@ -171,7 +162,6 @@ sup {
   background: #fff;
   border: 1px solid #e2e2e6;
   border-radius: 999px;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   color: #363636;
   cursor: pointer;
   font-family: "Myriad-Pro", "Open Sans", Arial, sans-serif;
@@ -182,21 +172,16 @@ sup {
   transition:
     background 200ms ease,
     border-color 200ms ease,
-    box-shadow 200ms ease,
-    color 200ms ease,
-    transform 200ms ease;
+    color 200ms ease;
 }
 
 .teaser-task-button:hover {
   border-color: #94a3b8;
-  box-shadow: 0 6px 14px -4px rgba(15, 23, 42, 0.10);
-  transform: translateY(-1px);
 }
 
 .teaser-task-button.is-active {
-  background: linear-gradient(180deg, #1f2937 0%, #0f172a 100%);
+  background: #0f172a;
   border-color: #0f172a;
-  box-shadow: 0 8px 18px -6px rgba(15, 23, 42, 0.35);
   color: #fff;
 }
 
@@ -218,25 +203,17 @@ sup {
 }
 
 .teaser-panel {
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  background: #fff;
   border: 2px solid #d6d6d6;
   border-radius: 20px;
-  box-shadow:
-    0 14px 30px -14px rgba(15, 23, 42, 0.20),
-    0 2px 6px -2px rgba(15, 23, 42, 0.06);
   display: grid;
   gap: 14px;
   padding: 13px 13px 16px;
-  transition: box-shadow 240ms ease, transform 240ms ease;
   width: 100%;
 }
 
 .teaser-panel.is-transformed {
-  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
   border-color: #8fcfe1;
-  box-shadow:
-    0 18px 36px -14px rgba(56, 130, 168, 0.32),
-    0 2px 6px -2px rgba(56, 130, 168, 0.10);
 }
 
 .teaser-transform {
@@ -256,11 +233,7 @@ sup {
 }
 
 .teaser-transform > span {
-  background: linear-gradient(90deg, #0f172a 0%, #1f4f63 60%, #0f172a 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: #1f4f63;
   display: inline-block;
 }
 
@@ -337,7 +310,6 @@ sup {
   background: #f6f7f9;
   border: 1px solid #e7e8ec;
   border-radius: 999px;
-  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.04);
   display: grid;
   gap: 12px;
   grid-template-columns: 30px max-content minmax(0, 1fr) 48px;
@@ -348,22 +320,20 @@ sup {
 
 .teaser-play-button {
   align-items: center;
-  background: linear-gradient(180deg, #1f2937 0%, #0f172a 100%);
+  background: #0f172a;
   border: 0;
   border-radius: 999px;
-  box-shadow: 0 4px 10px -2px rgba(15, 23, 42, 0.30);
   cursor: pointer;
   display: inline-flex;
   height: 30px;
   justify-content: center;
   padding: 0;
-  transition: box-shadow 200ms ease, transform 200ms ease;
+  transition: background 200ms ease;
   width: 30px;
 }
 
 .teaser-play-button:hover {
-  box-shadow: 0 6px 14px -3px rgba(15, 23, 42, 0.40);
-  transform: translateY(-1px);
+  background: #1f2937;
 }
 
 .teaser-play-button:focus-visible {
@@ -540,7 +510,7 @@ sup {
 }
 
 .policy-row-highlight {
-  background: linear-gradient(90deg, rgba(143, 207, 225, 0.18) 0%, rgba(143, 207, 225, 0.10) 100%);
+  background: rgba(143, 207, 225, 0.14);
 }
 
 .policy-row-highlight th,
@@ -586,9 +556,6 @@ sup {
 .sim2real-video {
   background: #000;
   border-radius: 14px;
-  box-shadow:
-    0 14px 30px -14px rgba(15, 23, 42, 0.20),
-    0 2px 6px -2px rgba(15, 23, 42, 0.06);
   display: block;
   height: auto;
   width: 100%;
