@@ -53,8 +53,8 @@ const realModalityTasks = buildTeaserTasks(
 )
 
 const links = [
-  { label: 'arXiv', href: '', iconClass: 'ai ai-arxiv' },
-  { label: 'PDF', href: '', iconClass: 'fas fa-file-pdf' },
+  { label: 'arXiv', href: 'https://arxiv.org/abs/2610.17422', iconClass: 'ai ai-arxiv' },
+  { label: 'PDF', href: 'https://arxiv.org/pdf/2610.17422', iconClass: 'fas fa-file-pdf' },
   { label: 'Code', href: '', iconClass: 'fab fa-github' },
   { label: 'Data', href: '', iconClass: 'fas fa-database' },
 ]
